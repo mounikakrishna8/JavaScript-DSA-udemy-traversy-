@@ -1,3 +1,3 @@
-function findMaxNumber() {}
+function findMaxNumber() { }
 
 module.exports = findMaxNumber;
