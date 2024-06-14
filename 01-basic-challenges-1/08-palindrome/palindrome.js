@@ -7,11 +7,12 @@
 
 function isPalindrome(str) {
   const formattedStr = removeNonAlphanumeric(str.toLowerCase());
-  return formattedStr;
+  const reversedStr = reverseString(formattedStr);
+  return formattedStr == reversedStr;
 }
 function removeNonAlphanumeric(str) {
   let formattedStr = '';
-  for (let i = 0; i, str.length; i++) {
+  for (let i = 0; i < str.length; i++) {
     const char = str[i];
     if (isAlphanumeric(char)) {
       formattedStr += char;
@@ -26,5 +27,11 @@ function isAlphanumeric(char) {
     (code >= 97 && code <= 122) //Lowercase a-z
   )
 }
-function reverseString(str) { }
+function reverseString(str) {
+  let reversed = '';
+  for (let i = str.length - 1; i >= 0; i--) {
+    reversed += str[i];
+  }
+  return reversed;
+}
 module.exports = isPalindrome;
